@@ -8,10 +8,14 @@ const Home = () => {
             {title:"Rainbow Road is so hard for WHAT",body:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab soluta fugiat aut nesciunt nihil eligendi rerum iusto omnis dolorum inventore?",author:"mario",id:3}
         ]
     );
+    const handleDelete = (id) => {
+        const newBlogs = blogs.filter(blog => blog.id!== id);
+        setBlogs(newBlogs);
+    };
     return (
         <div className="home">
             <h2>All Blogs</h2>
-            <BlogList blogs={blogs}/>
+            <BlogList blogs={blogs} handleDelete={handleDelete}/>
         </div>
     );
 }
